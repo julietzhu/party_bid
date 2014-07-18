@@ -1,13 +1,5 @@
-'use strict';
 
-/**
- * @ngdoc overview
- * @name partyBidApp
- * @description
- * # partyBidApp
- *
- * Main module of the application.
- */
+'use strict';
 angular
   .module('partyBidApp', [
     'ngAnimate',

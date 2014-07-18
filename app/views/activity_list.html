@@ -4,40 +4,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>报名</title>
-    <link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="../../css/font-awesome.min.css" rel="stylesheet" media="screen">
-    <link href="../../css/android.css" rel="stylesheet" media="screen">
-
-    <script src="../../js/jquery-2.0.0.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-
-        $(document).ready(function() {
-            $(".side-slide-trigger").click(function() {
-                $(".wrapper").addClass("side-slide-right");
-                $("header").addClass("side-slide-right");
-                $("footer").addClass("side-slide-right");
-                $(".side-slide-mask").addClass("mask-on").delay(0).queue(function () {
-                    $(this).addClass("side-slide-right");
-                    $(this).dequeue();
-                });
-            });
-            $(".side-slide-mask").click(function() {
-                $(".side-slide-mask").removeClass("mask-on").removeClass("side-slide-right");
-                $(".wrapper").removeClass("side-slide-right");
-                $("header").removeClass("side-slide-right");
-                $("footer").removeClass("side-slide-right");
-            })
-        })
-    </script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="css/android.css" rel="stylesheet" media="screen">
 
 </head>
 <body>
 
-<div class="side-slide-mask"></div>
-
-<header class="header">
+<header  class="header">
     活动列表
     <button class="btn btn-primary header-right" ng-click="go_create_activity()">创建活动</button>
 </header>

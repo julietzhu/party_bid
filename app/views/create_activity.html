@@ -8,10 +8,6 @@
     <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
     <link href="css/android.css" rel="stylesheet" media="screen">
 
-    <script src="../../js/jquery-2.0.0.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-
-
 </head>
 <body>
 
@@ -23,9 +19,9 @@
 <div id="wrapper" class="wrapper scrollable">
     <ul class="list-style-1">
             <h3>活动名称</h3>
-            <p><input type="text" class="input" ng-model="query"></p>
-            <button class="btn btn-default btn-lg btn-block" ng-disabled='!query' ng-click="go_sign_up()">创建</button>
-
+            <p><input type="text" class="input" ng-model="activity_name"></p>
+            <button class="btn btn-default btn-lg btn-block" ng-disabled='!activity_name' ng-click="go_sign_up(activity_name)">创建</button>
+            <p>{{tips}}</p>
     </ul>
 
 </div>
