@@ -13,4 +13,8 @@ angular.module('partyBidApp')
         $scope.go_create_activity = function () {
             $location.path('/create_activity')
         }
+
+        var name = JSON.parse(localStorage['activity_name']);
+        $scope.name = name.reverse();
     });
+

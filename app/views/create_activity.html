@@ -12,7 +12,7 @@
 <body>
 
 <header class="header">
-    <button class="btn btn-primary header-left" ng-click="back_to_activity_list()">返回</button>
+    <button class="btn btn-primary header-left" ng-show="!localStorage.length"ng-click="back_to_activity_list()">返回</button>
     创建活动
 </header>
 

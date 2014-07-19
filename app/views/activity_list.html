@@ -14,6 +14,16 @@
 <header  class="header">
     活动列表
     <button class="btn btn-primary header-right" ng-click="go_create_activity()">创建活动</button>
+
+    <div id="wrapper" >
+        <ul class="list-style-2" >
+            <li ng-repeat='friend in name'>
+            {{friend}}
+                <i class="icon-angle-right"></i>
+            </li>
+        </ul>
+    </div>
+
 </header>
 
 </body>
