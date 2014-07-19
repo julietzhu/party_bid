@@ -10,11 +10,19 @@ angular.module('partyBidApp')
             'AngularJS',
             'Karma'
         ];
-        $scope.go_create_activity = function () {
-            $location.path('/create_activity')
-        }
 
-        var name = JSON.parse(localStorage['activity_name']);
-        $scope.name = name.reverse();
+        if(localStorage.length!=0)
+        {
+            console.log(localStorage.length);
+            var name = JSON.parse(localStorage['activity_name']);
+            $scope.name = name.reverse();
+        }
+        else{
+            console.log(localStorage.length);
+        }
+        console.log(localStorage.length==0);
+        $scope.go_create_activity = function () {
+            $location.path('/create_activity');
+        }
     });
 

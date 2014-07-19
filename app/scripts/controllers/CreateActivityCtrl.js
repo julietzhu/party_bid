@@ -11,6 +11,8 @@ angular.module('partyBidApp')
             'Karma'
         ];
 
+        $scope.play = (localStorage.length!=0);
+
         $scope.back_to_activity_list = function () {
             $location.path('/activity_list')
         }
