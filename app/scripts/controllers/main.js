@@ -8,7 +8,7 @@
  * Controller of the partyBidApp
  */
 angular.module('partyBidApp')
-  .controller('MainCtrl', function ($scope,$location) {
+  .controller('MainController', function ($scope,$location) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

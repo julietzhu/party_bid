@@ -14,19 +14,19 @@ angular
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.html',
-                controller: 'MainCtrl'
+                controller: 'MainController'
             })
             .when('/create_activity', {
                 templateUrl: 'views/create_activity.html',
-                controller: 'CreateActivityCtrl'
+                controller: 'CreateActivityController'
             })
             .when('/activity_sign_up', {
                 templateUrl: 'views/activity_sign_up.html',
-                controller: 'ActivitySignUpCtrl'
+                controller: 'ActivitySignUpController'
             })
             .when('/activity_list', {
                 templateUrl: 'views/activity_list.html',
-                controller: 'ActivityListCtrl'
+                controller: 'ActivityListController'
             })
             .otherwise({
                 redirectTo: '/'

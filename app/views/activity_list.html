@@ -1,30 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>报名</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
-    <link href="css/android.css" rel="stylesheet" media="screen">
-
-</head>
-<body>
-
-<header  class="header">
+<header class="header">
     活动列表
     <button class="btn btn-primary header-right" ng-click="go_create_activity()">创建活动</button>
-
-    <div id="wrapper" >
-        <ul class="list-style-2" >
-            <li ng-repeat='list in name'>
-            {{list}}
-                <i class="icon-angle-right"></i>
-            </li>
-        </ul>
-    </div>
-
 </header>
 
-</body>
-</html>
+ <div id="wrapper">
+     <ul class="list-style-2">
+         <br>
+         <br>
+             <li ng-repeat = "list in names" ng-click="go_sign_up()">
+                 <a>
+                     {{list}}
+                     <i class = "icon-align-right"></i>
+                 </a>
+            </li>
+     </ul>
+ </div>
+
+
+
