@@ -18,9 +18,7 @@ angular.module('partyBidApp')
             $scope.name = name.reverse();
         }
         else{
-            console.log(localStorage.length);
         }
-        console.log(localStorage.length==0);
         $scope.go_create_activity = function () {
             $location.path('/create_activity');
         }

@@ -1,6 +1,7 @@
 /**
  * Created by julia on 14-7-16.
  */
+
 'use strict';
 
 angular.module('partyBidApp')
@@ -26,7 +27,7 @@ angular.module('partyBidApp')
                 var i = 0;
                 for (var n = 0; n<storedNames.length; n++) {
                     if (storedNames[n]==temp_act_name) {
-                        $scope.tips = "活动名称重复";
+                        $scope.tips = "*活动名称重复";
                         i = 1;
                         break;
                     }

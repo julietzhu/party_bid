@@ -20,8 +20,9 @@
     <ul class="list-style-1">
             <h3>活动名称</h3>
             <p><input type="text" class="input" ng-model="activity_name"></p>
+            <p class="tips">{{tips}}</p>
             <button class="btn btn-default btn-lg btn-block" ng-disabled='!activity_name' ng-click="go_sign_up(activity_name)">创建</button>
-            <p>{{tips}}</p>
+
     </ul>
 
 </div>
