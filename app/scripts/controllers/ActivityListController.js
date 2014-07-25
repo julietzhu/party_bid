@@ -17,6 +17,16 @@ angular.module('partyBidApp')
 //            $scope.names = name.reverse();
 //        }
 
+        if(localStorage.length!=0)
+        {
+            var names = [];
+            for(var n=localStorage.length-1;n>=0;n--){
+                name = JSON.parse(localStorage[n]);
+                names.push(name);
+            }
+            $scope.names = names;
+        }
+
         //跳转到create_activity页面
         $scope.go_create_activity = function () {
             $location.path('/create_activity');

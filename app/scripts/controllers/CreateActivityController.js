@@ -37,6 +37,7 @@ angular.module('partyBidApp')
                 {
                     var storedNames = [];
                     storedNames = JSON.parse(localStorage[n]);
+                    console.log(storedNames);
                     if (storedNames[0]==activities_name) {
                         $scope.tips = "*活动名称重复";
                         flag = 1;
