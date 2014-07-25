@@ -11,11 +11,11 @@ angular.module('partyBidApp')
             'Karma'
         ];
         //输出活动，后输入的活动先输出
-        if(localStorage.length!=0)
-        {
-            var name = JSON.parse(localStorage['activity_name']);
-            $scope.names = name.reverse();
-        }
+//        if(localStorage.length!=0)
+//        {
+//            var name = JSON.parse(localStorage['activity_name']);
+//            $scope.names = name.reverse();
+//        }
 
         //跳转到create_activity页面
         $scope.go_create_activity = function () {

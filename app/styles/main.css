@@ -579,7 +579,6 @@ footer {
     width:100%;
     text-align:left;
     height: 30px;
-
 }
 
 .list-style-2 li {
@@ -592,6 +591,7 @@ footer {
     position: relative;
     height: 30px;
     top:7px;
+    background-color: #ffff00 !important;
 }
 
 .list-style-2 li a {
@@ -752,7 +752,9 @@ footer {
     color:red;
 }
 
-
+.start{
+    background-color: #ffff00 !important;
+}
 
 
 

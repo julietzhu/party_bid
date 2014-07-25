@@ -15,15 +15,23 @@ angular.module('partyBidApp')
             $location.path('/activity_list')
         }
 
+        //活动状态
+        $scope.activity_state = "not_start";
+
         //开始按钮和结束按钮互斥显示
         $scope.start = true;
         $scope.start_finish = function(){     //开始按钮变成结束按钮
             $scope.start = false;
+            $scope.activity_state = "start";
         }
+
         $scope.finish_start = function(){     //结束按钮变成开始按钮，并弹出提示框
             if(confirm('确认要结束本次报名吗？'))
             {
                 $scope.start = true;
+                $scope.activity_state = "finish";
             }
+            $scope.activity_state = "start";
         }
+
     });

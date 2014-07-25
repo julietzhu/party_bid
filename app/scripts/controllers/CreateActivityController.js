@@ -24,8 +24,33 @@ angular.module('partyBidApp')
         $scope.go_sign_up = function () {
 
             var activities_name = $scope.activity_name;
+            var name = [];
+            name.push(activities_name);
+            //新数据结构类型,key:value
+            if(localStorage.length==0){
+                localStorage['0'] = JSON.stringify(name);
+                $location.path('/activity_sign_up');
+            }
+            else{
+                var flag = 0;
+                for(var n=0;n<localStorage.length;n++)
+                {
+                    var storedNames = [];
+                    storedNames = JSON.parse(localStorage[n]);
+                    if (storedNames[0]==activities_name) {
+                        $scope.tips = "*活动名称重复";
+                        flag = 1;
+                        break;
+                    }
+                }
+                if(flag==0){
+                    storedNames.push(activities_name);
+                    localStorage[localStorage.length] = JSON.stringify(name);
+                    $location.path('/activity_sign_up');
+                }
+            }
 
-            if (localStorage.length != 0) {
+ /*           if (localStorage.length != 0) {
                 var storedNames = [];
                 storedNames = JSON.parse(localStorage['activity_name']);
                 var i = 0;
@@ -48,6 +73,6 @@ angular.module('partyBidApp')
                 name.push(activities_name);
                 localStorage['activity_name'] = JSON.stringify(name);
                 $location.path('/activity_sign_up');
-            }
+            }*/
         }
     });
