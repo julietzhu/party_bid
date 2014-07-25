@@ -12,12 +12,15 @@ angular.module('partyBidApp')
             'Karma'
         ];
 
+        //判断返回按钮是否显示
         $scope.play = (localStorage.length!=0);
 
+        //跳转到activity_list
         $scope.back_to_activity_list = function () {
             $location.path('/activity_list')
         }
 
+        //创建活动，判断名称是否重复，跳转到activity_sign_up页面
         $scope.go_sign_up = function () {
 
             var activities_name = $scope.activity_name;
@@ -31,8 +34,6 @@ angular.module('partyBidApp')
                         $scope.tips = "*活动名称重复";
                         i = 1;
                         break;
-                    }
-                    else {
                     }
                 }
                 if(i==0){
