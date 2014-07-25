@@ -20,7 +20,10 @@ angular.module('partyBidApp')
         $scope.start_finish = function(){     //开始按钮变成结束按钮
             $scope.start = false;
         }
-        $scope.finish_start = function(){     //结束按钮变成开始按钮
-            $scope.start = true;
+        $scope.finish_start = function(){     //结束按钮变成开始按钮，并弹出提示框
+            if(confirm('确认要结束本次报名吗？'))
+            {
+                $scope.start = true;
+            }
         }
     });

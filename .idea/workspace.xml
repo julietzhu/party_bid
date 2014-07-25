@@ -56,21 +56,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_sign_up.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="activity_sign_up.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/activity_sign_up.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7142856" vertical-offset="0" max-vertical-offset="589">
-              <caret line="4" column="88" selection-start-line="4" selection-start-column="88" selection-end-line="4" selection-end-column="88" />
+            <state vertical-scroll-proportion="0.12582782" vertical-offset="0" max-vertical-offset="604">
+              <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivitySignUpController.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ActivitySignUpController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/ActivitySignUpController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.648062" vertical-offset="0" max-vertical-offset="645">
-              <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -113,8 +113,8 @@
         <option value="$PROJECT_DIR$/app/scripts/controllers/ActivityListController.js" />
         <option value="$PROJECT_DIR$/app/styles/main.css" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/CreateActivityController.js" />
-        <option value="$PROJECT_DIR$/app/views/activity_sign_up.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/ActivitySignUpController.js" />
+        <option value="$PROJECT_DIR$/app/views/activity_sign_up.html" />
       </list>
     </option>
   </component>
@@ -838,18 +838,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/activity_sign_up.html">
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/ActivitySignUpController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7142856" vertical-offset="0" max-vertical-offset="589">
-          <caret line="4" column="88" selection-start-line="4" selection-start-column="88" selection-end-line="4" selection-end-column="88" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/ActivitySignUpController.js">
+    <entry file="file://$PROJECT_DIR$/app/views/activity_sign_up.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.648062" vertical-offset="0" max-vertical-offset="608">
-          <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.12582782" vertical-offset="0" max-vertical-offset="604">
+          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
           <folding />
         </state>
       </provider>
