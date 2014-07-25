@@ -21,7 +21,7 @@ angular.module('partyBidApp')
         }
 
         //创建活动，判断名称是否重复，跳转到activity_sign_up页面
-        $scope.go_sign_up = function () {
+        $scope.cr_go_sign_up = function () {
 
             var activities_name = $scope.activity_name;
             var name = [];
@@ -51,29 +51,5 @@ angular.module('partyBidApp')
                 }
             }
 
- /*           if (localStorage.length != 0) {
-                var storedNames = [];
-                storedNames = JSON.parse(localStorage['activity_name']);
-                var i = 0;
-                for (var n = 0; n<storedNames.length; n++) {
-                    if (storedNames[n]==activities_name) {
-                        $scope.tips = "*活动名称重复";
-                        i = 1;
-                        break;
-                    }
-                }
-                if(i==0){
-                    storedNames.push(activities_name);
-                    localStorage['activity_name'] = JSON.stringify(storedNames);
-                    $location.path('/activity_sign_up');
-                }
-                else{
-                }
-            } else {
-                var name = [];
-                name.push(activities_name);
-                localStorage['activity_name'] = JSON.stringify(name);
-                $location.path('/activity_sign_up');
-            }*/
         }
     });

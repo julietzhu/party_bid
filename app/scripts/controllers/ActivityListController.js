@@ -10,12 +10,6 @@ angular.module('partyBidApp')
             'AngularJS',
             'Karma'
         ];
-        //输出活动，后输入的活动先输出
-//        if(localStorage.length!=0)
-//        {
-//            var name = JSON.parse(localStorage['activity_name']);
-//            $scope.names = name.reverse();
-//        }
 
         if(localStorage.length!=0)
         {
@@ -33,7 +27,9 @@ angular.module('partyBidApp')
         }
 
         //跳转到activity_sign_up页面
-        $scope.go_sign_up = function(){
+        $scope.go_sign_up = function(list){
+            var activity_name = list;
+            localStorage.setItem("activity_name", activity_name);;
             $location.path('/activity_sign_up');
         }
     });

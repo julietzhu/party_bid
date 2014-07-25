@@ -15,6 +15,10 @@ angular.module('partyBidApp')
             $location.path('/activity_list')
         }
 
+        //
+        console.log(localStorage.getItem('activity_name'));
+        localStorage.removeItem("activity_name")
+
         //活动状态
         $scope.activity_state = "not_start";
 
@@ -33,5 +37,4 @@ angular.module('partyBidApp')
             }
             $scope.activity_state = "start";
         }
-
     });
