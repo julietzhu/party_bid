@@ -22,21 +22,35 @@ angular.module('partyBidApp')
         activity = JSON.parse(localStorage[activities]);
         localStorage.removeItem("activity_key");
 
-        $scope.state = "开始";
-        var i = 0;
-        $scope.start_finish = function(){     //开始按钮变成结束按钮
-            if(i%2==0)                        //目前是开始状态
+//        $scope.state = "开始";
+//        var i = 0;
+//        $scope.start_finish = function(){     //开始按钮变成结束按钮
+//            if(i%2==0)                        //目前是开始状态
+//            {
+//                $scope.state = "结束";
+//                i++;                    //i=1
+//            }
+//            else{
+//                $scope.state = "开始";
+//                i++;                    //i=2
+//            }
+//        }
+//        i=0;
+        $scope.switch = "start";
+        $scope.start = function () {
+            $scope.switch = "end";
+            activity[2] = "start";
+            localStorage[activities] = JSON.stringify(activity);
+        }
+        $scope.finish = function () {
+            if(confirm('确认要结束本次报名吗？'))
             {
-                $scope.state = "结束";
-                i++;
-            }
-            else{
-                $scope.state = "开始";
-                i++;
+                $scope.switch = "start";
+                activity[2] = "finish";
+                localStorage[activities] = JSON.stringify(activity);
             }
         }
-        i=0;
-
+        localStorage[activities] = JSON.stringify(activity);
  /*       var t ;
         //开始按钮和结束按钮互斥显示
         $scope.start = true;
