@@ -11,14 +11,15 @@ angular.module('partyBidApp')
             'Karma'
         ];
 
+        var names = [];
+
         if(localStorage.length!=0)
         {
-            var names = [];
-            for(var n=localStorage.length-1;n>=0;n--){
+            for(var n=0;n<localStorage.length;n++){
                 var name = JSON.parse(localStorage[n]);
                 names.push(name[0]);
             }
-            $scope.lists = names;
+            $scope.lists = names.reverse();
         }
 
         //跳转到create_activity页面
@@ -29,7 +30,9 @@ angular.module('partyBidApp')
         //跳转到activity_sign_up页面
         $scope.go_sign_up = function(list){
             var activity_key = list;
-            localStorage.setItem("activity_key", activity_key);;
+            names.reverse();
+            var position = names.indexOf(activity_key);
+            localStorage.setItem("activity_key", position);
             $location.path('/activity_sign_up');
         }
     });

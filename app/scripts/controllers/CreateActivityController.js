@@ -22,13 +22,13 @@ angular.module('partyBidApp')
 
         //创建活动，判断名称是否重复，跳转到activity_sign_up页面
         $scope.cr_go_sign_up = function (activity_name) {
-            var activities_name = $scope.activity_name;
+            var activities_name = activity_name;
             var name = [];
             name.push(activities_name);
             //新数据结构类型,key:value
             if(localStorage.length==0){
                 name.push(0);
-                name.push("new_activity");
+                name.push("not_start");
                 localStorage['0'] = JSON.stringify(name);
                 $location.path('/activity_sign_up');
             }
@@ -46,7 +46,7 @@ angular.module('partyBidApp')
                 }
                 if(flag==0){
                     name.push(localStorage.length);
-                    name.push("new_activity");
+                    name.push("not_start");
                     localStorage[localStorage.length] = JSON.stringify(name);
                     $location.path('/activity_sign_up');
                 }

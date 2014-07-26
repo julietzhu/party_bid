@@ -14,17 +14,17 @@ angular.module('partyBidApp')
         var activity_key = localStorage.getItem('activity_key');
         var activities = Number(activity_key);//将对象变成number
         var activity = [];
-      //  activity = JSON.parse(localStorage[activities]);
+        activity = JSON.parse(localStorage[activities]);
+        console.log("act"+activity);
         localStorage.removeItem("activity_key");
 
         //跳转到activity_list页面
         $scope.go_list = function () {
-            console.log(activity[1]+activity[2]);
-            if(activity[2]=="new_activity")
-            {
-                activity[2] = "not_start";
-                localStorage[activities] = JSON.stringify(activity);
-            }
+//            if(activity[2]=="new_activity")
+//            {
+//                activity[2] = "not_start";
+//                localStorage[activities] = JSON.stringify(activity);
+//            }
             $location.path('/activity_list');
         }
 
@@ -34,8 +34,9 @@ angular.module('partyBidApp')
 
         }
         else{
+     //       $scope.flag = "false";
             $scope.switch = "start";
-            if(activity[2]=="not_start")
+            if(activity[2]=="not_start"||activity[2]=="finish")
             {
                 $scope.flag = "true";
             }
