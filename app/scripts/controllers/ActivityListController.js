@@ -15,10 +15,10 @@ angular.module('partyBidApp')
         {
             var names = [];
             for(var n=localStorage.length-1;n>=0;n--){
-                name = JSON.parse(localStorage[n]);
-                names.push(name);
+                var name = JSON.parse(localStorage[n]);
+                names.push(name[0]);
             }
-            $scope.names = names;
+            $scope.lists = names;
         }
 
         //跳转到create_activity页面

@@ -2,12 +2,9 @@
     开始
     <button class="btn btn-primary header-left" ng-click="go_list()">返回</button>
     <div ng-switch="switch">
-        <button class="btn btn-primary header-right" ng-switch-when="start" ng-click="start()" >开始</button>
-        <button class="btn btn-primary header-right" ng-switch-when="end" ng-click="finish()">结束</button>
+        <button class="btn btn-primary header-right" ng-switch-when="start" ng-click="start()"ng-disabled='flag'  >开始</button>
+        <button class="btn btn-primary header-right" ng-switch-when="finish" ng-click="finish()">结束</button>
     </div>
-
-    <!--<button class="btn btn-primary header-right" ng-show="true"  ng-disabled='flag' ng-click="start_finish()" ng-disabled="xx">{{state}}</button>-->
-    <!--<button class="btn btn-primary header-right" ng-show="!start" ng-click="finish_start()">结束</button>-->
 </header>
 
 <footer>
