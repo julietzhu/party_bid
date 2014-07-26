@@ -28,6 +28,8 @@ angular.module('partyBidApp')
             name.push(activities_name);
             //新数据结构类型,key:value
             if(localStorage.length==0){
+                name.push(0);
+                name.push("not_start");
                 localStorage['0'] = JSON.stringify(name);
                 $location.path('/activity_sign_up');
             }
@@ -36,6 +38,7 @@ angular.module('partyBidApp')
                 for(var n=0;n<localStorage.length;n++)
                 {
                     var storedNames = [];
+                    console.log("type"+typeof(n));
                     storedNames = JSON.parse(localStorage[n]);
                     console.log(storedNames);
                     if (storedNames[0]==activities_name) {
@@ -45,7 +48,8 @@ angular.module('partyBidApp')
                     }
                 }
                 if(flag==0){
-                    storedNames.push(activities_name);
+                    name.push(localStorage.length);
+                    name.push("not_start");
                     localStorage[localStorage.length] = JSON.stringify(name);
                     $location.path('/activity_sign_up');
                 }

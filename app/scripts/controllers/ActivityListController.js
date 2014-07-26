@@ -28,8 +28,8 @@ angular.module('partyBidApp')
 
         //跳转到activity_sign_up页面
         $scope.go_sign_up = function(list){
-            var activity_name = list;
-            localStorage.setItem("activity_name", activity_name);;
+            var activity_key = list;
+            localStorage.setItem("activity_key", activity_key);;
             $location.path('/activity_sign_up');
         }
     });
