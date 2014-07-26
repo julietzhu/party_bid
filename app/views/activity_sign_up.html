@@ -1,8 +1,8 @@
 <header class="header">
     开始
     <button class="btn btn-primary header-left" ng-click="go_list()">返回</button>
-    <button class="btn btn-primary header-right" ng-show="start" ng-click="start_finish()">开始</button>
-    <button class="btn btn-primary header-right" ng-show="!start" ng-click="finish_start()">结束</button>
+    <button class="btn btn-primary header-right" ng-show="true" ng-click="start_finish()" ng-disabled="xx">{{state}}</button>
+    <!--<button class="btn btn-primary header-right" ng-show="!start" ng-click="finish_start()">结束</button>-->
 </header>
 
 <footer>
