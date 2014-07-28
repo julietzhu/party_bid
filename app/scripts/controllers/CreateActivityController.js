@@ -27,8 +27,8 @@ angular.module('partyBidApp')
             name.push(activities_name);
             //新数据结构类型,key:value
             if(localStorage.length==0){
-                name.push(0);
-                name.push("not_start");
+      //          name.push(0);
+                name.push("finish");
                 localStorage['0'] = JSON.stringify(name);
                 $location.path('/activity_sign_up');
             }
@@ -45,9 +45,10 @@ angular.module('partyBidApp')
                     }
                 }
                 if(flag==0){
-                    name.push(localStorage.length);
-                    name.push("not_start");
-                    localStorage[localStorage.length] = JSON.stringify(name);
+                    var len = localStorage.length;
+       //             name.push(len);
+                    name.push("finish");
+                    localStorage[len] = JSON.stringify(name);
                     $location.path('/activity_sign_up');
                 }
             }
