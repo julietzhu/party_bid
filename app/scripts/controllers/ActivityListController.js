@@ -12,21 +12,16 @@ angular.module('partyBidApp')
         ];
 
         //输出活动名称
-        $scope.lists = Activity.getActivityName().reverse();
-        
+        $scope.activity_name_list = Activity.getActivityName().reverse();
+
         //跳转到create_activity页面
         $scope.go_create_activity = function () {
             $location.path('/create_activity');
         }
 
         //跳转到activity_sign_up页面
-        $scope.go_sign_up = function(list){
-//            var activity_key = list;
-//            names.reverse();
-//            var position = names.indexOf(activity_key);
-//            localStorage.setItem("activity_key", position);
-            $location.path('/activity_sign_up/');
- //           $routeParam.pos
+        $scope.go_sign_up = function(name){
+            $location.path('/activity_sign_up/'+name);
         }
 
     });

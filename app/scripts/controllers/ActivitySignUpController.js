@@ -4,23 +4,17 @@
 'use strict';
 
 angular.module('partyBidApp')
-    .controller('ActivitySignUpController', function ($scope, $location) {
+    .controller('ActivitySignUpController', function ($scope, $location,$routeParams) {
         $scope.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
             'Karma'
         ];
-
+        console.log($routeParams.activity_name);
         //跳转到activity_list页面
         $scope.go_list = function () {
             $location.path('/activity_list');
         }
-
-        //取到点击的活动相关信息
-        var activity_key = Number(localStorage.getItem('activity_key'));//将对象变成number
-        var activity = [];
-        activity = JSON.parse(localStorage[activity_key]);
-        localStorage.removeItem("activity_key");
 
         // 判断开始按钮的状态以及判断有其他活动开始时，开始按钮不可用
         if(activity[1]=="not_start")

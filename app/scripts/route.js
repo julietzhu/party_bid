@@ -20,7 +20,7 @@ angular
                 templateUrl: 'views/create_activity.html',
                 controller: 'CreateActivityController'
             })
-            .when('/activity_sign_up/:pos', {
+            .when('/activity_sign_up/:activity_name', {
                 templateUrl: 'views/activity_sign_up.html',
                 controller: 'ActivitySignUpController'
             })
