@@ -22,13 +22,12 @@ angular.module('partyBidApp')
 
         //创建活动
         $scope.create_activity = function (activity_name) {
-            var flag = CreateActivity.judgeActivityName(activity_name);
-            console.log(flag);
+            var flag = Activity.judgeActivityName(activity_name);
             if(flag==true){
                 $scope.tips="*活动名称重复";
             }
             else{
-                CreateActivity.save(activity_name);
+                Activity.save(activity_name);
                 $location.path('/activity_sign_up');
             }
         }

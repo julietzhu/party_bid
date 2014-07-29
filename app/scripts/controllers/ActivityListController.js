@@ -11,17 +11,9 @@ angular.module('partyBidApp')
             'Karma'
         ];
 
-//        var names = [];
-//
-//        if(localStorage.length!=0)
-//        {
-//            for(var n=0;n<localStorage.length;n++){
-//                var name = JSON.parse(localStorage[n]);
-//                names.push(name[0]);
-//            }
-//            $scope.lists = names.reverse();
-//        }
-
+        //输出活动名称
+        $scope.lists = Activity.getActivityName().reverse();
+        
         //跳转到create_activity页面
         $scope.go_create_activity = function () {
             $location.path('/create_activity');
