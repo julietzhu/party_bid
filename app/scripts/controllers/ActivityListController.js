@@ -11,16 +11,16 @@ angular.module('partyBidApp')
             'Karma'
         ];
 
-        var names = [];
-
-        if(localStorage.length!=0)
-        {
-            for(var n=0;n<localStorage.length;n++){
-                var name = JSON.parse(localStorage[n]);
-                names.push(name[0]);
-            }
-            $scope.lists = names.reverse();
-        }
+//        var names = [];
+//
+//        if(localStorage.length!=0)
+//        {
+//            for(var n=0;n<localStorage.length;n++){
+//                var name = JSON.parse(localStorage[n]);
+//                names.push(name[0]);
+//            }
+//            $scope.lists = names.reverse();
+//        }
 
         //跳转到create_activity页面
         $scope.go_create_activity = function () {
@@ -29,11 +29,13 @@ angular.module('partyBidApp')
 
         //跳转到activity_sign_up页面
         $scope.go_sign_up = function(list){
-            var activity_key = list;
-            names.reverse();
-            var position = names.indexOf(activity_key);
-            localStorage.setItem("activity_key", position);
-            $location.path('/activity_sign_up');
+//            var activity_key = list;
+//            names.reverse();
+//            var position = names.indexOf(activity_key);
+//            localStorage.setItem("activity_key", position);
+            $location.path('/activity_sign_up/');
+ //           $routeParam.pos
         }
+
     });
 

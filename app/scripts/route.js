@@ -16,11 +16,11 @@ angular
                 templateUrl: 'views/main.html',
                 controller: 'MainController'
             })
-            .when('/create_activity', {
+            .when('/create_activity/', {
                 templateUrl: 'views/create_activity.html',
                 controller: 'CreateActivityController'
             })
-            .when('/activity_sign_up', {
+            .when('/activity_sign_up/:pos', {
                 templateUrl: 'views/activity_sign_up.html',
                 controller: 'ActivitySignUpController'
             })

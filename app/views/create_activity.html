@@ -1,5 +1,5 @@
 <header class="header">
-    <button class="btn btn-primary header-left" ng-show="play" ng-click="back_to_activity_list()">返回</button>
+    <button class="btn btn-primary header-left" ng-show="hasActivities" ng-click="back_to_activity_list()">返回</button>
     创建活动
 </header>
 
@@ -8,7 +8,7 @@
             <h3 align="center">活动名称</h3>
             <p align="center"><input type="text" class="input" ng-model="activity_name"></p>
             <p align="center" class="tips">{{tips}}</p>
-            <button class="btn btn-block" ng-disabled='!activity_name' ng-click="cr_go_sign_up(activity_name)">创建</button>
+            <button class="btn btn-block" ng-disabled='!activity_name' ng-click="create_activity(activity_name)">创建</button>
 
     </ul>
 </div>

@@ -13,45 +13,23 @@ angular.module('partyBidApp')
         ];
 
         //判断返回按钮是否显示
-        $scope.play = (localStorage.length!=0);
+        $scope.hasActivities = (localStorage.length!=0);
 
         //跳转到activity_list
         $scope.back_to_activity_list = function () {
             $location.path('/activity_list');
         }
 
-        //创建活动，判断名称是否重复，跳转到activity_sign_up页面
-        $scope.cr_go_sign_up = function (activity_name) {
-            var activities_name = activity_name;
-            var name = [];
-            name.push(activities_name);
-            //新数据结构类型,key:value
-            if(localStorage.length==0){
-      //          name.push(0);
-                name.push("finish");
-                localStorage['0'] = JSON.stringify(name);
-                $location.path('/activity_sign_up');
+        //创建活动
+        $scope.create_activity = function (activity_name) {
+            var flag = CreateActivity.judgeActivityName(activity_name);
+            console.log(flag);
+            if(flag==true){
+                $scope.tips="*活动名称重复";
             }
             else{
-                var flag = 0;
-                for(var n=0;n<localStorage.length;n++)
-                {
-                    var storedNames = [];
-                    storedNames = JSON.parse(localStorage[n]);
-                    if (storedNames[0]==activities_name) {
-                        $scope.tips = "*活动名称重复";
-                        flag = 1;
-                        break;
-                    }
-                }
-                if(flag==0){
-                    var len = localStorage.length;
-       //             name.push(len);
-                    name.push("finish");
-                    localStorage[len] = JSON.stringify(name);
-                    $location.path('/activity_sign_up');
-                }
+                CreateActivity.save(activity_name);
+                $location.path('/activity_sign_up');
             }
-
         }
     });

@@ -18,7 +18,8 @@ angular.module('partyBidApp')
 
         //取到点击的活动相关信息
         var activity_key = Number(localStorage.getItem('activity_key'));//将对象变成number
-        var activity =  JSON.parse(localStorage[activity_key]);
+        var activity = [];
+        activity = JSON.parse(localStorage[activity_key]);
         localStorage.removeItem("activity_key");
 
         // 判断开始按钮的状态以及判断有其他活动开始时，开始按钮不可用
