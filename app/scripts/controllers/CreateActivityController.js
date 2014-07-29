@@ -28,7 +28,7 @@ angular.module('partyBidApp')
             }
             else{
                 Activity.save(activity_name);
-                $location.path('/activity_sign_up'+activity_name);
+                $location.path('/activity_sign_up/'+activity_name);
             }
         }
     });
