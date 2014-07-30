@@ -62,3 +62,17 @@ Activity.finish = function () {
     }
     return "finish";
 }
+
+//读取开始活动的名称
+Activity.getStartActivityName = function(){
+    return localStorage.getItem("start_activity");
+}
+
+//判断活动是否开始
+Activity.isStarted = function (activity_name){
+    if(activity_name==Activity.getStartActivityName())
+    {
+        return true;
+    }
+    return false;
+}

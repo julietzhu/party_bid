@@ -17,7 +17,7 @@ angular.module('partyBidApp')
         }
 
         // 判断开始按钮的状态以及判断有其他活动开始时，开始按钮不可用
-        var status = localStorage.getItem("start_activity");
+        var status = Activity.getStartActivityName(); //这里可以尝试抽函数
         if(status==null||status=="no")
         {
             $scope.switch = "start";
@@ -41,4 +41,19 @@ angular.module('partyBidApp')
         $scope.finish = function () {
             $scope.switch = Activity.finish();
         }
+
+
+//        Message.savePeopleName("julia");
+//        Message.savePeopleName("julia1");
+        Message.savePhoneNumber("123");
+        Message.savePhoneNumber("1234");
+        Message.savePhoneNumber("1234");
+//        Message.getPeopleName();
+  //      console.log("test"+Message.judgePhoneNumber("1234"));
+
+        var temp = {"message":[{"create_date":"xx","message":"yy","phone":"123"}]};
+        console.log("temp"+temp.message[0].message);
+      //  console.log(json_message.message[0].phone);
+
+      //  console.log("test"+Message.isRightMessage("bm1234523"));
     });
