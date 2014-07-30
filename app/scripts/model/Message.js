@@ -35,6 +35,10 @@ Message.getMessageName = function(message){
     return name;
 }
 //读取短信中的电话号码
+Message.getMessagePhone = function(message){
+    var phone = message.substr(message.length-11,message.length);
+    return phone;
+}
 
 //判断电话号码是否重复
 Message.judgePhoneNumber = function(phoneNumber){
