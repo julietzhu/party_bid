@@ -1,11 +1,24 @@
 <header class="header">
-    开始
+    报名{{total_number}}人
     <button class="btn btn-primary header-left" ng-click="go_list()">返回</button>
     <div ng-switch="switch">
         <button class="btn btn-primary header-right" ng-switch-when="start" ng-click="start()" ng-disabled="flag">开始</button>
         <button class="btn btn-primary header-right" ng-switch-when="finish" ng-click="finish()">结束</button>
     </div>
 </header>
+
+<div id="wrapper">
+    <ul class="list-style-2 ">
+        <br/>
+        <br/>
+        <li ng-repeat = "" >
+            <a>
+                {{people_name}}    {{phone_number}}
+                <i class = "icon-align-right"></i>
+            </a>
+        </li>
+    </ul>
+</div>
 
 <footer>
     <ul class="footer-nav footer-nav-2tabs">
