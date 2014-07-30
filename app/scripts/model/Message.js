@@ -68,12 +68,12 @@ Message.savePhoneNumber = function (phoneNumber){
         localStorage["join_"+startActivityName+"_phone_number"] = JSON.stringify(join_phone_number);
     }
 }
-//
+
 ////读取报名者姓名
-//Message.getPeopleName = function()
-//{
-//    var startActivityName = Activity.getStartActivityName();
-//    var join_people_name = localStorage.getItem("join_"+startActivityName+"_people_name");
-//    console.log(typeof(join_people_name));
-//}
+Message.getPeopleName = function()
+{
+    var startActivityName = Activity.getStartActivityName();
+    var join_people_name = JSON.parse(localStorage["join_"+startActivityName+"_people_name"]);
+    return join_people_name;
+}
 ////读取报名者电话
