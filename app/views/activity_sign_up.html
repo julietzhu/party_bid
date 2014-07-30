@@ -7,23 +7,29 @@
     </div>
 </header>
 
-<div id="wrapper">
+<div class="div-inline">
     <ul class="list-style-2 ">
         <br/>
         <br/>
         <li ng-repeat="people_name in name_list track by $index">
             <a>
                 {{people_name}}
-                <i class = "icon-align-right"></i>
             </a>
         </li>
+    </ul>
+</div>
 
+<div class="div-inline">
+    <ul class="list-style-2 ">
+        <br/>
+        <br/>
         <li ng-repeat="phone_number in number_list">
             <a>
                 {{phone_number}}
                 <i class = "icon-align-right"></i>
             </a>
         </li>
+
     </ul>
 </div>
 

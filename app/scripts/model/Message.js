@@ -2,6 +2,23 @@
  * Created by julia on 14-7-29.
  */
 function Message(){}
+//Message去掉所有空格，变成统一模式
+Message.dropSpace = function(message)
+{
+    if(message==""){
+        return "";
+    }
+    else{
+        var new_message ="";
+        for(var n= 0;n<message.length;n++)
+        {
+            if(message.charAt(n)!=" "){
+                new_message = new_message +message.charAt(n);
+            }
+        }
+        return new_message;
+    }
+}
 
 //判断活动是否是以bm开头，不考虑大小写，如果是，则合法，返回true
 Message.isRightMessage = function(message){
@@ -11,6 +28,12 @@ Message.isRightMessage = function(message){
     }
     return false;
 }
+
+////读取短信中的姓名
+//Message.getMessageName = function(message){
+//
+//}
+//读取短信中的电话号码
 
 //判断电话号码是否重复
 Message.judgePhoneNumber = function(phoneNumber){
@@ -52,8 +75,7 @@ Message.savePhoneNumber = function (phoneNumber){
     console.log(Message.judgePhoneNumber(phoneNumber));
     if(Message.judgePhoneNumber(phoneNumber)==false)
     {
-        console.log(phoneNumber+"chongfu")
-        return "chongfu";
+        return "false";
     }
     else
     {
@@ -66,10 +88,11 @@ Message.savePhoneNumber = function (phoneNumber){
         }
         join_phone_number.push(phoneNumber);
         localStorage["join_"+startActivityName+"_phone_number"] = JSON.stringify(join_phone_number);
+        return "true";
     }
 }
 
-////读取报名者姓名
+////读取localStorage报名者姓名
 Message.getPeopleName = function()
 {
     var startActivityName = Activity.getStartActivityName();
@@ -77,7 +100,7 @@ Message.getPeopleName = function()
     return join_people_name;
 }
 
-//读取报名者电话
+//读取localStorage报名者电话
 Message.getPhoneNumber = function()
 {
     var startActivityName = Activity.getStartActivityName();

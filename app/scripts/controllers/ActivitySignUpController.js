@@ -43,15 +43,12 @@ angular.module('partyBidApp')
         }
 
 
-        Message.savePeopleName("julia");
-        Message.savePeopleName("julia1");
-        Message.savePhoneNumber("123");
-        Message.savePhoneNumber("1234");
-        Message.savePhoneNumber("1234");
+        var phone_number = Message.getPhoneNumber();
+        $scope.total_number = phone_number.length;
         $scope.name_list = Message.getPeopleName();
         $scope.number_list = Message.getPhoneNumber();
-        console.log("name"+Message.getPeopleName());
-  //      console.log("test"+Message.judgePhoneNumber("1234"));
+
+        console.log(Message.dropSpace("aaa   bbbb  ss d "));
 
         var temp = {"message":[{"create_date":"xx","message":"yy","phone":"123"}]};
         console.log("temp"+temp.message[0].message);

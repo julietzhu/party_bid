@@ -756,6 +756,10 @@ footer {
     background-color: #ffff00 !important;
 }
 
-
+.div-inline{
+    display:inline;
+    float: left;
+    width:678px;
+}
 
 
