@@ -76,4 +76,11 @@ Message.getPeopleName = function()
     var join_people_name = JSON.parse(localStorage["join_"+startActivityName+"_people_name"]);
     return join_people_name;
 }
-////读取报名者电话
+
+//读取报名者电话
+Message.getPhoneNumber = function()
+{
+    var startActivityName = Activity.getStartActivityName();
+    var join_phone_number = JSON.parse(localStorage["join_"+startActivityName+"_phone_number"]);
+    return join_phone_number;
+}

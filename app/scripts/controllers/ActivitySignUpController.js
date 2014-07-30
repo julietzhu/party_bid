@@ -49,6 +49,7 @@ angular.module('partyBidApp')
         Message.savePhoneNumber("1234");
         Message.savePhoneNumber("1234");
         $scope.name_list = Message.getPeopleName();
+        $scope.number_list = Message.getPhoneNumber();
         console.log("name"+Message.getPeopleName());
   //      console.log("test"+Message.judgePhoneNumber("1234"));
 

@@ -13,7 +13,14 @@
         <br/>
         <li ng-repeat="people_name in name_list track by $index">
             <a>
-                {{people_name}}    {{phone_number}}
+                {{people_name}}
+                <i class = "icon-align-right"></i>
+            </a>
+        </li>
+
+        <li ng-repeat="phone_number in number_list">
+            <a>
+                {{phone_number}}
                 <i class = "icon-align-right"></i>
             </a>
         </li>
