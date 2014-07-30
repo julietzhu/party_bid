@@ -29,10 +29,11 @@ Message.isRightMessage = function(message){
     return false;
 }
 
-////读取短信中的姓名
-//Message.getMessageName = function(message){
-//
-//}
+//读取短信中的姓名
+Message.getMessageName = function(message){
+    var name = message.substr(2,message.length-11-2);
+    return name;
+}
 //读取短信中的电话号码
 
 //判断电话号码是否重复

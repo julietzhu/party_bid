@@ -30,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/ActivitySignUpController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="341" max-vertical-offset="1064">
-              <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+              <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
               <folding>
                 <element signature="e#362#419#0" expanded="false" />
                 <element signature="e#575#623#0" expanded="false" />
@@ -44,15 +44,15 @@
       <file leaf-file-name="Message.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/model/Message.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46986088" vertical-offset="0" max-vertical-offset="1045">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.5873261" vertical-offset="0" max-vertical-offset="874">
+              <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
               <folding>
-                <element signature="e#608#620#0" expanded="false" />
-                <element signature="e#749#1298#0" expanded="false" />
-                <element signature="e#1357#1824#0" expanded="false" />
-                <element signature="e#1884#2534#0" expanded="false" />
-                <element signature="e#2595#2783#0" expanded="false" />
-                <element signature="e#2843#3034#0" expanded="false" />
+                <element signature="e#122#423#0" expanded="false" />
+                <element signature="e#811#1360#0" expanded="false" />
+                <element signature="e#1419#1886#0" expanded="false" />
+                <element signature="e#1946#2596#0" expanded="false" />
+                <element signature="e#2657#2845#0" expanded="false" />
+                <element signature="e#2905#3096#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -894,7 +894,7 @@
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/ActivitySignUpController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="341" max-vertical-offset="1064">
-          <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
+          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
           <folding>
             <element signature="e#362#419#0" expanded="false" />
             <element signature="e#575#623#0" expanded="false" />
@@ -906,15 +906,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/model/Message.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46986088" vertical-offset="0" max-vertical-offset="1045">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.5873261" vertical-offset="0" max-vertical-offset="874">
+          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
           <folding>
-            <element signature="e#608#620#0" expanded="false" />
-            <element signature="e#749#1298#0" expanded="false" />
-            <element signature="e#1357#1824#0" expanded="false" />
-            <element signature="e#1884#2534#0" expanded="false" />
-            <element signature="e#2595#2783#0" expanded="false" />
-            <element signature="e#2843#3034#0" expanded="false" />
+            <element signature="e#122#423#0" expanded="false" />
+            <element signature="e#811#1360#0" expanded="false" />
+            <element signature="e#1419#1886#0" expanded="false" />
+            <element signature="e#1946#2596#0" expanded="false" />
+            <element signature="e#2657#2845#0" expanded="false" />
+            <element signature="e#2905#3096#0" expanded="false" />
           </folding>
         </state>
       </provider>

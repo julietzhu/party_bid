@@ -48,7 +48,7 @@ angular.module('partyBidApp')
         $scope.name_list = Message.getPeopleName();
         $scope.number_list = Message.getPhoneNumber();
 
-        console.log(Message.dropSpace("aaa   bbbb  ss d "));
+        console.log(Message.getMessageName("BMjulia18215613579"));
 
         var temp = {"message":[{"create_date":"xx","message":"yy","phone":"123"}]};
         console.log("temp"+temp.message[0].message);
