@@ -17,29 +17,27 @@ angular.module('partyBidApp')
         }
 
         // 判断开始按钮的状态以及判断有其他活动开始时，开始按钮不可用
-        var status = Activity.getStartActivityName(); //这里可以尝试抽函数
-        if(status==null||status=="no")
-        {
-            $scope.switch = "start";
-        }
-        else{
-            if(status==$routeParams.activity_name)
-            {
-                $scope.switch = "finish";
+        $scope.startIsUsed = function(){
+            var activity_name = Activity.getStartActivityName(); //这里可以尝试抽函数
+            var status = $routeParams.status;
+            if(status=="start"){
+               $scope.switch = "finish";
             }
-            else
-            {
-                $scope.flag = "true";
+            else{
+                if(activity_name!="no"){
+                    $scope.flag = "false";
+                }
                 $scope.switch = "start";
             }
         }
+        $scope.startIsUsed();
 
         //开始按钮与结束按钮转换，修改活动状态
         $scope.start = function () {
             $scope.switch = Activity.start($routeParams.activity_name);
         }
         $scope.finish = function () {
-            $scope.switch = Activity.finish();
+            $scope.switch = Activity.finish($routeParams.activity_name);
         }
 
         $scope.initiate = function () {
@@ -50,6 +48,4 @@ angular.module('partyBidApp')
         }
 
         $scope.initiate();
-
-        console.log(!localStorage.getItem("gg"));
     });

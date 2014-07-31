@@ -37,7 +37,7 @@ Activity.save = function(create_activity_name)
     localStorage['activity_name'] = JSON.stringify(activity_name);
 }
 
-//读取活动位置
+//读取活动位置  return position
 Activity.get_activity_position = function(activity_name){
     if(localStorage.length!=0){
         var stored_activity_name = Activity.getActivityName();
@@ -95,14 +95,18 @@ Activity.getActivityName = function(){
 //活动开始
 Activity.start = function (activity_name) {
     localStorage.setItem("start_activity",activity_name);
+    var position = Activity.get_activity_position(activity_name);
+    Activity.changeActivityStatus(position,"start");
     return "finish";
 }
 
 //活动结束
-Activity.finish = function () {
+Activity.finish = function (activity_name) {
     if(confirm('确认要结束本次报名吗？'))
     {
         localStorage.setItem("start_activity","no");
+        var position = Activity.get_activity_position(activity_name);
+        Activity.changeActivityStatus(position,"finish");
         return "start";
     }
     return "finish";
