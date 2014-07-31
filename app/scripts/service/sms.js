@@ -13,10 +13,38 @@ var native_accessor = {
     },
 
     process_received_message: function (json_message) {
-        console.log(json_message.messages[0].phone);//.message[1].phone
-   //     console.log(Message.isRightMessage(json_message));
+        var changeMessage = json_message.messages[0].message+json_message.messages[0].phone;
+        var message = Message.dropSpace(changeMessage);
+        if(Message.isRightMessage(message)==true){
+            var phoneNumber = Message.getMessagePhone(message);
+            if(Message.judgePhoneNumber(phoneNumber)==true||Message.judgePhoneNumber(phoneNumber)=="noExists"){
+                var name = Message.getMessageName(message);
+                Message.savePeopleName(name);
+                Message.savePhoneNumber(phoneNumber);
+                var sign_up_scope = angular.element("#sign_up").scope();
+                console.log(sign_up_scope);
+                sign_up_scope.$apply(function () {
+                    sign_up_scope.initiate();
+                })
+            }
+            else{
+                console.log("电话号码重复");
+            }
+        }
+        else{
+            console.log("格式不正确");
+        }
     }
 };
+
+var register = document.getElementById("sign_up");  //获取报名页面的id
+if (register) {
+    var scope = angular.element(register).scope();
+    //通过id找到对应的页面获取$scope
+    scope.$apply(function () {  //使用$apply()将报名页面的refresh方法包起来调用
+        scope.refresh();
+    });
+}
 
 
 

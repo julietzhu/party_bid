@@ -37,6 +37,51 @@ Activity.save = function(create_activity_name)
     localStorage['activity_name'] = JSON.stringify(activity_name);
 }
 
+//读取活动位置
+Activity.get_activity_position = function(activity_name){
+    if(localStorage.length!=0){
+        var stored_activity_name = Activity.getActivityName();
+        for(var n=0;n<stored_activity_name.length;n++){
+            if(activity_name==stored_activity_name[n]){
+                return n;
+            }
+        }
+    }
+}
+
+//存储新建活动状态
+Activity.create_activity_status = function (){
+    if(!localStorage.getItem("activity_status"))
+    {
+        var status = ["notstart"];
+        localStorage["activity_status"] = JSON.stringify(status);
+    }
+    else{
+        var activity_status = [];
+        activity_status = JSON.parse(localStorage["activity_status"]);
+        activity_status.push("notstart");
+        localStorage["activity_status"] = JSON.stringify(activity_status);
+    }
+}
+
+//修改活动状态
+Activity.changeActivityStatus = function(position,status){
+    var activity_status = JSON.parse(localStorage["activity_status"]);
+    if(status =="start"){
+        activity_status[position] = "start";
+    }
+    else{
+        activity_status[position] = "finish";
+    }
+    localStorage["activity_status"] = JSON.stringify(activity_status);
+}
+
+//读取活动状态
+Activity.getActivityStatus = function(position){
+    var activity_status = JSON.parse(localStorage["activity_status"]);
+    return activity_status[position];
+}
+
 //读取活动名称
 Activity.getActivityName = function(){
     if(localStorage.length!=0)

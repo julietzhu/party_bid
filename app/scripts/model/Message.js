@@ -77,7 +77,6 @@ Message.savePeopleName = function (peopleName) {
 //存储报名者电话
 Message.savePhoneNumber = function (phoneNumber){
     var startActivityName = Activity.getStartActivityName();
-    console.log(Message.judgePhoneNumber(phoneNumber));
     if(Message.judgePhoneNumber(phoneNumber)==false)
     {
         return "false";
@@ -101,7 +100,13 @@ Message.savePhoneNumber = function (phoneNumber){
 Message.getPeopleName = function()
 {
     var startActivityName = Activity.getStartActivityName();
-    var join_people_name = JSON.parse(localStorage["join_"+startActivityName+"_people_name"]);
+    var people_name = localStorage.getItem("join_"+startActivityName+"_people_name")||[];
+    if(people_name.length==0) {
+        return "";
+    }
+    else{
+        var join_people_name = JSON.parse(localStorage["join_"+startActivityName+"_people_name"]);
+    }
     return join_people_name;
 }
 
@@ -109,6 +114,12 @@ Message.getPeopleName = function()
 Message.getPhoneNumber = function()
 {
     var startActivityName = Activity.getStartActivityName();
-    var join_phone_number = JSON.parse(localStorage["join_"+startActivityName+"_phone_number"]);
+    var phone_number = localStorage.getItem("join_"+startActivityName+"_phone_number")||[];
+    if(phone_number.length==0) {
+        return "";
+    }
+    else{
+        var join_phone_number = JSON.parse(localStorage["join_"+startActivityName+"_phone_number"]);
+    }
     return join_phone_number;
 }

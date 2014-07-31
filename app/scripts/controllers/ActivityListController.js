@@ -21,7 +21,10 @@ angular.module('partyBidApp')
 
         //跳转到activity_sign_up页面
         $scope.go_sign_up = function(name){
-            $location.path('/activity_sign_up/'+name);
+            var position = Activity.get_activity_position(name);
+            var status = Activity.getActivityStatus(position);
+            console.log(status);
+            $location.path('/activity_sign_up/'+name+"/"+status);
         }
 
     });

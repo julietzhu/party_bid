@@ -19,11 +19,11 @@
     </ul>
 </div>
 
-<div class="div-inline">
+<div id="sign_up"  class="div-inline">
     <ul class="list-style-2 ">
         <br/>
         <br/>
-        <li ng-repeat="phone_number in number_list">
+        <li ng-repeat="phone_number in number_list track by $index">
             <a>
                 {{phone_number}}
                 <i class = "icon-align-right"></i>

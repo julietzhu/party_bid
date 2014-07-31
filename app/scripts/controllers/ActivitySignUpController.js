@@ -42,17 +42,14 @@ angular.module('partyBidApp')
             $scope.switch = Activity.finish();
         }
 
+        $scope.initiate = function () {
+            var phone_number = Message.getPhoneNumber();
+            $scope.total_number = phone_number.length;
+            $scope.name_list = Message.getPeopleName();
+            $scope.number_list = Message.getPhoneNumber();
+        }
 
-        var phone_number = Message.getPhoneNumber();
-        $scope.total_number = phone_number.length;
-        $scope.name_list = Message.getPeopleName();
-        $scope.number_list = Message.getPhoneNumber();
+        $scope.initiate();
 
-        console.log(Message.getMessagePhone("BMjulia18215613579"));
-
-        var temp = {"message":[{"create_date":"xx","message":"yy","phone":"123"}]};
-        console.log("temp"+temp.message[0].message);
-      //  console.log(json_message.message[0].phone);
-
-      //  console.log("test"+Message.isRightMessage("bm1234523"));
+        console.log(!localStorage.getItem("gg"));
     });
