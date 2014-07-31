@@ -17,36 +17,35 @@ var native_accessor = {
         var message = Message.dropSpace(changeMessage);
         if(Message.isRightMessage(message)==true){
             var phoneNumber = Message.getMessagePhone(message);
-            if(Message.judgePhoneNumber(phoneNumber)==true||Message.judgePhoneNumber(phoneNumber)=="noExists"){
-                var name = Message.getMessageName(message);
-                Message.savePeopleName(name);
-                Message.savePhoneNumber(phoneNumber);
-                var sign_up_scope = angular.element("#sign_up").scope();
-                console.log(sign_up_scope);
-                sign_up_scope.$apply(function () {
-                    sign_up_scope.initiate();
-                })
+            var activity_name = Activity.getStartActivityName();
+            if(typeof(activity_name)!="object"){
+                native_accessor.send_sms(phoneNumber,"活动尚未开始，请稍候")
+            }
+            else if(activity_name[1]=="finish"){
+                native_accessor.send_sms(phoneNumber,"Sorry,活动报名已经结束");
             }
             else{
-                console.log("电话号码重复");
+                if(Message.judgePhoneNumber(phoneNumber)==true||Message.judgePhoneNumber(phoneNumber)=="noExists"){
+                    var name = Message.getMessageName(message);
+                    Message.savePeopleName(name);
+                    Message.savePhoneNumber(phoneNumber);
+                    var sign_up_scope = angular.element("#sign_up").scope();
+                    console.log(sign_up_scope);
+                    sign_up_scope.$apply(function () {
+                        sign_up_scope.initiate();
+                    })
+                    native_accessor.send_sms(phoneNumber,"恭喜！报名成功");
+                }
+//                else{
+//                    console.log("电话号码重复");
+//                }
             }
         }
-        else{
-            console.log("格式不正确");
-        }
+//        else{
+//            console.log("格式不正确");
+//        }
     }
 };
-
-var register = document.getElementById("sign_up");  //获取报名页面的id
-if (register) {
-    var scope = angular.element(register).scope();
-    //通过id找到对应的页面获取$scope
-    scope.$apply(function () {  //使用$apply()将报名页面的refresh方法包起来调用
-        scope.refresh();
-    });
-}
-
-
 
 function notify_message_received(message_json) {
     //console.log(JSON.stringify(message_json));

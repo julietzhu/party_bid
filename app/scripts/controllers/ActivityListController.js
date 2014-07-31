@@ -23,7 +23,6 @@ angular.module('partyBidApp')
         $scope.go_sign_up = function(name){
             var position = Activity.get_activity_position(name);
             var status = Activity.getActivityStatus(position);
-            console.log(status);
             $location.path('/activity_sign_up/'+name+"/"+status);
         }
 

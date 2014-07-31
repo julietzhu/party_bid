@@ -18,14 +18,18 @@ angular.module('partyBidApp')
 
         // 判断开始按钮的状态以及判断有其他活动开始时，开始按钮不可用
         $scope.startIsUsed = function(){
-            var activity_name = Activity.getStartActivityName(); //这里可以尝试抽函数
+            var activity_name = Activity.getStartActivityName();
             var status = $routeParams.status;
             if(status=="start"){
                $scope.switch = "finish";
             }
             else{
-                if(activity_name!="no"){
-                    $scope.flag = "false";
+                if(typeof(activity_name)=="object"){
+                    if(activity_name[1]=="finish"){
+                    }
+                    else{
+                        $scope.flag = "true";
+                    }
                 }
                 $scope.switch = "start";
             }
