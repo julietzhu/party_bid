@@ -591,7 +591,6 @@ footer {
     position: relative;
     height: 30px;
     top:7px;
-    background-color: #ffff00 !important;
 }
 
 .list-style-2 li a {
@@ -753,7 +752,7 @@ footer {
 }
 
 .start{
-    background-color: #ffff00 !important;
+    background: #ffff00 !important;
 }
 
 .div-inline{

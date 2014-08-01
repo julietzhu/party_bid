@@ -7,8 +7,8 @@
      <ul class="list-style-2 ">
          <br/>
          <br/>
-             <li ng-repeat = "name in activity_name_list" ng-click="go_sign_up(name)" >
-                 <a class="start">
+             <li ng-repeat = "name in activity_name_list" ng-click="go_sign_up(name)" class={{status(name)}} >
+                 <a >
                      {{name}}
                      <i class = "icon-align-right"></i>
                  </a>

@@ -11,6 +11,23 @@ angular.module('partyBidApp')
             'Karma'
         ];
 
+        //开始的活动背景色是黄色
+        $scope.status = function(activity_name){
+            var activity = (Activity.getStartActivityName())[0];
+            var status = (Activity.getStartActivityName())[1];
+            console.log(activity);
+            if(activity == "no")
+            {
+                return "";
+            }
+            else{
+                if(activity==activity_name&&status=="start"){
+                    return "start";
+                }
+            }
+        }
+
+
         //输出活动名称
         $scope.activity_name_list = Activity.getActivityName().reverse();
 
