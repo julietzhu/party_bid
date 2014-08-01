@@ -2,8 +2,8 @@
 //notify_message_received({"messages":[{"create_date":"Tue Jan 15 15:28:44 格林尼治标准时间+0800 2013","message":"jj308","phone":"18733171780"}]})
 var native_accessor = {
     send_sms: function (phone, message) {
-//        native_access.send_sms({"receivers":[{"name":'name', "phone":phone}]}, {"message_content":message});
-        console.log(phone, message);
+        native_access.send_sms({"receivers":[{"name":'name', "phone":phone}]}, {"message_content":message});
+//        console.log(phone, message);
     },
 
     receive_message: function (json_message) {
@@ -15,8 +15,8 @@ var native_accessor = {
     process_received_message: function (json_message) {
         var changeMessage = json_message.messages[0].message+json_message.messages[0].phone;
         var message = Message.dropSpace(changeMessage);
+        var phoneNumber = Message.getMessagePhone(message);
         if(Message.isRightMessage(message)==true){
-            var phoneNumber = Message.getMessagePhone(message);
             var activity_name = Activity.getStartActivityName();
             if(typeof(activity_name)!="object"){
                 native_accessor.send_sms(phoneNumber,"活动尚未开始，请稍候")
@@ -38,12 +38,12 @@ var native_accessor = {
                     native_accessor.send_sms(phoneNumber,"恭喜！报名成功");
                 }
                 else{
-                    console.log("电话号码重复");
+                    native_accessor.send_sms(phoneNumber,"电话号码重复");
                 }
             }
         }
         else{
-            console.log("格式不正确");
+            native_accessor.send_sms(phoneNumber,"格式不正确");
         }
     }
 };

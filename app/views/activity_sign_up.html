@@ -6,31 +6,32 @@
         <button class="btn btn-primary header-right" ng-switch-when="finish" ng-click="finish()">结束</button>
     </div>
 </header>
+<div>
+    <div class="div-inline">
+        <ul class="list-style-2 ">
+            <br/>
+            <br/>
+            <li ng-repeat="people_name in name_list track by $index">
+                <a>
+                    {{people_name}}
+                </a>
+            </li>
+        </ul>
+    </div>
 
-<div class="div-inline">
-    <ul class="list-style-2 ">
-        <br/>
-        <br/>
-        <li ng-repeat="people_name in name_list track by $index">
-            <a>
-                {{people_name}}
-            </a>
-        </li>
-    </ul>
-</div>
+    <div id="sign_up"  class="div-inline">
+        <ul class="list-style-2 ">
+            <br/>
+            <br/>
+            <li ng-repeat="phone_number in number_list track by $index">
+                <a>
+                    {{phone_number}}
+                    <i class = "icon-align-right"></i>
+                </a>
+            </li>
 
-<div id="sign_up"  class="div-inline">
-    <ul class="list-style-2 ">
-        <br/>
-        <br/>
-        <li ng-repeat="phone_number in number_list track by $index">
-            <a>
-                {{phone_number}}
-                <i class = "icon-align-right"></i>
-            </a>
-        </li>
-
-    </ul>
+        </ul>
+    </div>
 </div>
 
 <footer>

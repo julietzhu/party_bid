@@ -25,7 +25,7 @@
 
     <!-- Add your site or application content here -->
       <div ng-view=""></div>
-
+       <p>test</p>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -61,16 +61,34 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+    <script src="scripts/plugins/underscore.js"></script>
+    <script src="scripts/plugins/lib/cordova/cordova-2.1.0.js"></script>
+    <script src="scripts/plugins/lib/angular-mobile/mobile-nav.min.js"></script>
+    <script src="scripts/plugins/lib/zepto/zepto.js"></script>
+    <script src="scripts/plugins/lib/infrastructure/native.js"></script>
+    <script src="scripts/plugins/lib/jt-logic.js/conditions.js"></script>
+    <script src="scripts/plugins/lib/jt-logic.js/relations.js"></script>
+    <script src="scripts/plugins/lib/jt-logic.js/would.js"></script>
+    <script src="scripts/plugins/lib/jt-notify.js/notify.js"></script>
+    <script src="scripts/plugins/lib/jt/jt.js"></script>
+    <script src="scripts/plugins/lib/jt/JTObject.js"></script>
+    <script src="scripts/plugins/mobile.js"></script>
+
+    <script src="scripts/model/Activity.js"></script>
+    <script src="scripts/model/Message.js"></script>
+    <script src="scripts/model/Refresh.js"></script>
+    <script src="scripts/service/sms.js"></script>
+
         <script src="scripts/route.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/ActivitySignUpController.js"></script>
         <script src="scripts/controllers/ActivityListController.js"></script>
         <script src="scripts/controllers/CreateActivityController.js"></script>
+
         <!-- endbuild -->
-        <script src="scripts/model/Activity.js"></script>
-        <script src="scripts/model/Message.js"></script>
-        <script src="scripts/model/Refresh.js"></script>
-        <script src="scripts/service/sms.js"></script>
+
+
 
 </body>
 </html>

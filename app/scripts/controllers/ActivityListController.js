@@ -6,15 +6,14 @@
 angular.module('partyBidApp')
     .controller('ActivityListController', function ($scope, $location) {
         //开始的活动背景色是黄色
-        $scope.status = function(activity_name){
+        $scope.status = function (activity_name) {
             var activity = (Activity.getStartActivityName())[0];
             var status = (Activity.getStartActivityName())[1];
-            if(activity == "no")
-            {
+            if (activity == "no") {
                 return "";
             }
-            else{
-                if(activity==activity_name&&status=="start"){
+            else {
+                if (activity == activity_name && status == "start") {
                     return "start";
                 }
             }
@@ -29,10 +28,22 @@ angular.module('partyBidApp')
         }
 
         //跳转到activity_sign_up页面
-        $scope.go_sign_up = function(name){
+        $scope.go_sign_up = function (name) {
             var position = Activity.get_activity_position(name);
             var status = Activity.getActivityStatus(position);
-            $location.path('/activity_sign_up/'+name+"/"+status);
+            $location.path('/activity_sign_up/' + name + "/" + status);
+        }
+
+        //创建活动按钮是否可用
+        $scope.hasActivityStarted = function () {
+            var activity_name = Activity.getStartActivityName();
+            if (typeof(activity_name) == "object") {
+                if (activity_name[1] == "start") {
+                    {
+                        return "true";
+                    }
+                }
+            }
         }
     });
 
