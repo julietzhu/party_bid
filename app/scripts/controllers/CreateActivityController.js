@@ -6,12 +6,6 @@
 
 angular.module('partyBidApp')
     .controller('CreateActivityController', function ($scope, $location) {
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
-
         //判断返回按钮是否显示
         $scope.hasActivities = (localStorage.length!=0);
 

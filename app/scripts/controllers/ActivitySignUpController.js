@@ -5,12 +5,6 @@
 
 angular.module('partyBidApp')
     .controller('ActivitySignUpController', function ($scope, $location,$routeParams) {
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
-
         //跳转到activity_list页面
         $scope.go_list = function () {
             $location.path('/activity_list');

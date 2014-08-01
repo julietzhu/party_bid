@@ -38,7 +38,7 @@ Activity.save = function(create_activity_name)
     localStorage["start_activity"] = JSON.stringify("no");
 }
 
-//读取活动位置  return position
+//读取活动位置  return position(number)
 Activity.get_activity_position = function(activity_name){
     if(localStorage.length!=0){
         var stored_activity_name = Activity.getActivityName();
@@ -96,7 +96,6 @@ Activity.getActivityName = function(){
 //活动开始
 Activity.start = function (activity_name) {
     var name_status = [activity_name,"start"];
- //   localStorage.setItem("start_activity",activity_name);
     localStorage["start_activity"] = JSON.stringify(name_status);
     var position = Activity.get_activity_position(activity_name);
     Activity.changeActivityStatus(position,"start");
@@ -108,9 +107,7 @@ Activity.finish = function (activity_name) {
     if(confirm('确认要结束本次报名吗？'))
     {
         var name_status = [activity_name,"finish"];
-        //   localStorage.setItem("start_activity",activity_name);
         localStorage["start_activity"] = JSON.stringify(name_status);
-    //    localStorage.setItem("start_activity","no");
         var position = Activity.get_activity_position(activity_name);
         Activity.changeActivityStatus(position,"finish");
         return "start";
@@ -123,11 +120,7 @@ Activity.getStartActivityName = function(){
     return JSON.parse(localStorage["start_activity"]);
 }
 
-//判断活动是否开始
+//判断该活动是否开始
 Activity.isStarted = function (activity_name){
-    if(activity_name==Activity.getStartActivityName())
-    {
-        return true;
-    }
-    return false;
+    return activity_name==Activity.getStartActivityName();
 }

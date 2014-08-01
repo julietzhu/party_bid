@@ -22,11 +22,7 @@ Message.dropSpace = function(message)
 
 //判断活动是否是以bm开头，不考虑大小写，如果是，则合法，返回true
 Message.isRightMessage = function(message){
-    if(message.substr(0,2).toUpperCase()=="BM")
-    {
-        return true;
-    }
-    return false;
+        return message.substr(0,2).toUpperCase()=="BM";
 }
 
 //读取短信中的姓名
@@ -34,6 +30,7 @@ Message.getMessageName = function(message){
     var name = message.substr(2,message.length-11-2);
     return name;
 }
+
 //读取短信中的电话号码
 Message.getMessagePhone = function(message){
     var phone = message.substr(message.length-11,message.length);
