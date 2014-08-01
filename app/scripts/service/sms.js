@@ -25,7 +25,8 @@ var native_accessor = {
                 native_accessor.send_sms(phoneNumber,"Sorry,活动报名已经结束");
             }
             else{
-                if(Message.judgePhoneNumber(phoneNumber)==true||Message.judgePhoneNumber(phoneNumber)=="noExists"){
+                if(Message.judgePhoneNumber(phoneNumber)==true||Message.judgePhoneNumber(phoneNumber)=="noExists")
+                {
                     var name = Message.getMessageName(message);
                     Message.savePeopleName(name);
                     Message.savePhoneNumber(phoneNumber);
@@ -36,14 +37,14 @@ var native_accessor = {
                     })
                     native_accessor.send_sms(phoneNumber,"恭喜！报名成功");
                 }
-//                else{
-//                    console.log("电话号码重复");
-//                }
+                else{
+                    console.log("电话号码重复");
+                }
             }
         }
-//        else{
-//            console.log("格式不正确");
-//        }
+        else{
+            console.log("格式不正确");
+        }
     }
 };
 

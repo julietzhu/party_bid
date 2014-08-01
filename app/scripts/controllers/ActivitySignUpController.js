@@ -39,16 +39,18 @@ angular.module('partyBidApp')
         //开始按钮与结束按钮转换，修改活动状态
         $scope.start = function () {
             $scope.switch = Activity.start($routeParams.activity_name);
+  //          location.reload(true);
         }
         $scope.finish = function () {
             $scope.switch = Activity.finish($routeParams.activity_name);
+  //          location.reload(true);
         }
 
         $scope.initiate = function () {
-            var phone_number = Message.getPhoneNumber();
+            var phone_number = Message.getPhoneNumber($routeParams.activity_name,$routeParams.status);
             $scope.total_number = phone_number.length;
-            $scope.name_list = Message.getPeopleName();
-            $scope.number_list = Message.getPhoneNumber();
+            $scope.name_list = Message.getPeopleName($routeParams.activity_name,$routeParams.status);
+            $scope.number_list = Message.getPhoneNumber($routeParams.activity_name,$routeParams.status);
         }
 
         $scope.initiate();

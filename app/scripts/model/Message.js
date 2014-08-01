@@ -42,7 +42,7 @@ Message.getMessagePhone = function(message){
 
 //判断电话号码是否重复
 Message.judgePhoneNumber = function(phoneNumber){
-    var startActivityName = Activity.getStartActivityName();
+    var startActivityName = (Activity.getStartActivityName())[0];
     var phone_number = localStorage.getItem("join_"+startActivityName+"_phone_number")||[];
     if(phone_number.length==0) {
         return "noExists";
@@ -62,7 +62,7 @@ Message.judgePhoneNumber = function(phoneNumber){
 
 //存储报名者姓名
 Message.savePeopleName = function (peopleName) {
-    var startActivityName = Activity.getStartActivityName();
+    var startActivityName = (Activity.getStartActivityName())[0];
     var join_people_name;
     if (localStorage.getItem("join_" + startActivityName + "_people_name") == null) {
         join_people_name = [];
@@ -76,7 +76,7 @@ Message.savePeopleName = function (peopleName) {
 
 //存储报名者电话
 Message.savePhoneNumber = function (phoneNumber){
-    var startActivityName = Activity.getStartActivityName();
+    var startActivityName = (Activity.getStartActivityName())[0];
     if(Message.judgePhoneNumber(phoneNumber)==false)
     {
         return "false";
@@ -87,7 +87,8 @@ Message.savePhoneNumber = function (phoneNumber){
         {
             var join_phone_number = [];
         }
-        else{
+        else
+        {
             var join_phone_number = JSON.parse(localStorage["join_"+startActivityName+"_phone_number"]);
         }
         join_phone_number.push(phoneNumber);
@@ -97,29 +98,59 @@ Message.savePhoneNumber = function (phoneNumber){
 }
 
 ////读取localStorage报名者姓名
-Message.getPeopleName = function()
+Message.getPeopleName = function(activityName,status)
 {
-    var startActivityName = Activity.getStartActivityName();
-    var people_name = localStorage.getItem("join_"+startActivityName+"_people_name")||[];
-    if(people_name.length==0) {
-        return "";
+    var startActivityName = (Activity.getStartActivityName())[0];
+    if(startActivityName==activityName){
+        var people_name = localStorage.getItem("join_"+startActivityName+"_people_name")||[];
+        if(people_name.length==0) {
+            return "";
+        }
+        else{
+            var join_people_name = JSON.parse(localStorage["join_"+startActivityName+"_people_name"]);
+        }
+        return join_people_name;
     }
     else{
-        var join_people_name = JSON.parse(localStorage["join_"+startActivityName+"_people_name"]);
+        if(status=="finish"){
+            var people_name = localStorage.getItem("join_"+activityName+"_people_name")||[];
+            if(people_name.length==0) {
+                return "";
+            }
+            else{
+                var join_people_name = JSON.parse(localStorage["join_"+activityName+"_people_name"]);
+            }
+            return join_people_name;
+        }
     }
-    return join_people_name;
+    return "";
 }
 
 //读取localStorage报名者电话
-Message.getPhoneNumber = function()
+Message.getPhoneNumber = function(activityName,status)
 {
-    var startActivityName = Activity.getStartActivityName();
-    var phone_number = localStorage.getItem("join_"+startActivityName+"_phone_number")||[];
-    if(phone_number.length==0) {
-        return "";
+    var startActivityName = (Activity.getStartActivityName())[0];
+    if(startActivityName==activityName){
+        var phone_number = localStorage.getItem("join_"+startActivityName+"_phone_number")||[];
+        if(phone_number.length==0) {
+            return "";
+        }
+        else{
+            var join_phone_number = JSON.parse(localStorage["join_"+startActivityName+"_phone_number"]);
+        }
+        return join_phone_number;
     }
     else{
-        var join_phone_number = JSON.parse(localStorage["join_"+startActivityName+"_phone_number"]);
+        if(status=="finish"){
+            var phone_number = localStorage.getItem("join_"+activityName+"_phone_number")||[];
+            if(phone_number.length==0) {
+                return "";
+            }
+            else{
+                var join_phone_number = JSON.parse(localStorage["join_"+activityName+"_phone_number"]);
+            }
+            return join_phone_number;
+        }
     }
-    return join_phone_number;
+    return "";
 }
